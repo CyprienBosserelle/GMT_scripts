@@ -1,15 +1,17 @@
 #!/bin/bash
 
 ###################################################
-## This script converts raw sounding shape files from LINZ to a NZTM
+## This script burn-in stop-bank and seawall in a gridded DEM
+#
+# Usage: ./AddStopBank inpuDEM.nc stopbank.shp outputDEM.nc
 
-gmtset FONT_LABEL 10p FONT_ANNOT 8p MAP_FRAME_TYPE plain
-
-#originalnc=New_1m_DEM_DENAN.nc
+# Input DEM s .nc file
 originalnc=$1
-#drainsshp=Drainage_fix2.shp
+
+# stopbank shape file should be a line type with at least 4 column id, width, elevation start of line feature , elevation end of line feature
 drainsshp=$2
-#outputnc=New_1m_DEM_fixed_wt_drains.nc
+
+# Output file name  .nc file
 outputnc=$3
 
 
