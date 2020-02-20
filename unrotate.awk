@@ -9,14 +9,25 @@ BEGIN{
 {
 	if(NR>0){
 
-	if(NF>2)
+	if(NF==1)
 	{
-		printf("%2.2f\t%2.2f\t%2.2f\t%2.2f\t%2.2f\n",cos(-1*theta)*($1)-sin(-1*theta)*($2)+xo,sin(-1*theta)*($1)+cos(-1*theta)*($2)+yo,$1,$2,$3)
+		print($0)
 	}
 	else
 	{
-		printf("%2.2f\t%2.2f\t%2.2f\t%2.2f\n",cos(-1*theta)*($1)-sin(-1*theta)*($2)+xo,sin(-1*theta)*($1)+cos(-1*theta)*($2)+yo,$1,$2)
+
+	if(NF>2)
+	{
+		printf("%2.2f\t%2.2f\t\n",cos(-1*theta)*($1)-sin(-1*theta)*($2)+xo,sin(-1*theta)*($1)+cos(-1*theta)*($2)+yo)
+		for(i=3;i<=NF;i++) printf("%s\t",$i);
+		printf("\n");
+	}
+	else
+	{
+		printf("%2.2f\t%2.2f\n",cos(-1*theta)*($1)-sin(-1*theta)*($2)+xo,sin(-1*theta)*($1)+cos(-1*theta)*($2)+yo)
 
 	}
 	}
+	}
+
 }

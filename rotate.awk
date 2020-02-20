@@ -7,9 +7,19 @@ BEGIN{
 	}
 {
 	if(NR>0){
+
+	if(NF==1)
+	{
+		print($0)
+	}
+	else
+	{
 	if(NF>2)
 	{
-		printf("%2.2f\t%2.2f\t%2.2f\n",cos(theta)*($1-xo)-sin(theta)*($2-yo),sin(theta)*($1-xo)+cos(theta)*($2-yo),$3)
+		printf("%2.2f\t%2.2f\t",cos(theta)*($1-xo)-sin(theta)*($2-yo),sin(theta)*($1-xo)+cos(theta)*($2-yo))
+		for(i=3;i<=NF;i++) printf("%s\t",$i);
+		printf("\n");
+
 	}
 	else
 	{
@@ -17,7 +27,7 @@ BEGIN{
 
 	}
 
-
+	}
 
 	}
 }

@@ -70,4 +70,4 @@ grdmath Struct_Fix-tmp.nc ${originalnc} DENAN = ${outputnc}
 
 rm Struct_Fix-tmp.nc DEM_at_struct-tmp.nc struct_Elevation-tmp.nc Struct_area-tmp.nc Flow_struct_seg_resampled.tmp
 
-#rm New_flow_Struct.gmt Flow_struct_seg+len.tmp Flow_struct_seg.tmp  Flow_struct_seg+len+z.tmp Flow_struct_seg_resampled.tmp
+rm New_flow_Struct.gmt Flow_struct_seg+len.tmp Flow_struct_seg.tmp  Flow_struct_seg+len+z.tmp Flow_struct_seg_resampled.tmp
